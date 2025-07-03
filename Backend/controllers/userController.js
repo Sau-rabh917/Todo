@@ -1,6 +1,6 @@
 import userModel from "../Models/userModel.js";
 import bcrypt from "bcryptjs";
-
+import JWT from "jsonwebtoken";
 
 // REGISTER
 const registerController = async (req, res) => {
@@ -46,7 +46,7 @@ const registerController = async (req, res) => {
 };
 
 //LOGIN
-const loginControler = async (req, res) => {
+const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
     //find user
@@ -90,4 +90,4 @@ const loginControler = async (req, res) => {
   }
 };
 
-module.exports = { registerController, loginControler };
+export { registerController, loginController };
