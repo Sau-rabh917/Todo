@@ -1,5 +1,5 @@
 import JWT from "jsonwebtoken";
-
+import dotenv from "dotenv";
 export const authMiddleware = (req, res, next) => {
     try {
         const token = req.headers.authorization?.split(" ")[1]; // Extract token from Authorization header
@@ -10,7 +10,7 @@ export const authMiddleware = (req, res, next) => {
                 
                 return res.status(401).send({ 
                     success: false,
-                    message: "Invalid token",
+                    message: "Invalid token", 
                     error: err.message
                 });
             }
