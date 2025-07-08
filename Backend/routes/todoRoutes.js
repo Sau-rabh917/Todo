@@ -12,8 +12,8 @@ const router = express.Router();
 // Create todo
 router.post("/create", authMiddleware, createTodoController);
 
-// Get all todos for a user
-router.get("/getAll/:userId", authMiddleware, getTodoController);
+// Get all todos for the authenticated user
+router.get("/getAll", authMiddleware, getTodoController);
 
 // Delete todo
 router.delete("/delete/:id", authMiddleware, deleteTodoController);
